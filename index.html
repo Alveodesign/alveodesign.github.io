@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interior Design by A.S.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+        header {
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #292724;
+            margin-left: 30px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1.05;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 12px 18px;
+    display: inline-block;
+    margin-bottom: 35px;
+}
+
+        .button {
+            display: inline-block;
+            padding: 16px 30px;
+            background: #292724;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 25px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">A.S.</div>
+
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Проекты</a>
+            <a href="#">Обо мне</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>
+                Interior<br>
+                Design by A.S.
+            </h1>
+
+            <p>
+                Создаю современные и уютные пространства,
+                в которых хочется жить.
+            </p>
+
+            <a href="#" class="button">
+                Посмотреть проекты
+            </a>
+
+        </div>
+    </section>
+
+</body>
+</html>
