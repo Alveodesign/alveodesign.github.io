@@ -510,7 +510,149 @@
             }
         }
 
+/* ===== ПЛАВНЫЕ АНИМАЦИИ ARTDOM ===== */
+
+/* Плавное появление страницы */
+body {
+    animation: pageFade 1.2s ease forwards;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Плавное появление элементов */
+header,
+.hero,
+section,
+footer {
+    animation: contentFade 1s ease both;
+}
+
+@keyframes contentFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Логотип */
+.logo {
+    transition: transform 0.4s ease, letter-spacing 0.4s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+    letter-spacing: 6px;
+}
+
+
+/* Навигация */
+nav a {
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Все кнопки */
+button,
+.btn,
+a.button,
+.contact-link,
+.whatsapp-button {
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        opacity 0.35s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover,
+.contact-link:hover,
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Карточки проектов */
+.project,
+.project-card,
+.card {
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.project:hover,
+.project-card:hover,
+.card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* Картинки проектов */
+.project img,
+.project-card img,
+.card img {
+    transition: transform 0.7s ease;
+}
+
+.project:hover img,
+.project-card:hover img,
+.card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Стеклянные элементы */
+.glass,
+.glass-button {
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* WhatsApp */
+.whatsapp-button:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+/* Убираем анимации для людей,
+   которые отключили движение в системе */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
     </style>
+
 </head>
 
 
