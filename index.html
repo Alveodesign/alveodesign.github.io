@@ -6,6 +6,38 @@
 
     <title>ALVEO Design Interior</title>
 
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 20px;
+    padding: 14px 22px;
+
+    color: white;
+    text-decoration: none;
+
+    background: rgba(37, 211, 102, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: rgba(37, 211, 102, 0.95);
+    transform: translateY(-3px);
+}
+
     <style>
 
         /* ==============================
@@ -631,12 +663,12 @@
 
         <br>
 
-        <a
-    class="contact-link"
+    <a
+    class="whatsapp-button"
     href="https://wa.me/994705019190"
     target="_blank"
 >
-    Написать мне
+    <span>●</span> Написать мне в WhatsApp
 </a>
 
     </div>
