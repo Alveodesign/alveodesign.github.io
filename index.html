@@ -7,259 +7,653 @@
     <title>ALVEO Design Interior</title>
 
     <style>
+
+        /* ==============================
+           ОСНОВНЫЕ НАСТРОЙКИ
+        ============================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+            background: #171512;
+        }
 
-            background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.35),
-                    rgba(0, 0, 0, 0.35)
-                ),
-               url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
+
+        /* ==============================
+           ГЛАВНЫЙ ЭКРАН
+        ============================== */
+
+        .hero {
             min-height: 100vh;
-        }
 
-        /* ШАПКА */
+            position: relative;
 
-        header {
-            padding: 30px 7%;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.20),
+                    rgba(0, 0, 0, 0.20)
+                ),
+                url("background.jpg");
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            background-size: cover;
+            background-position: center center;
 
-        .brand {
             display: flex;
             flex-direction: column;
         }
 
+
+        /* ==============================
+           ШАПКА
+        ============================== */
+
+        header {
+            width: 100%;
+
+            padding: 28px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+            z-index: 10;
+        }
+
+
+        /* ЛОГО */
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+
+            flex-shrink: 0;
+        }
+
         .logo {
-            font-size: 30px;
-            letter-spacing: 7px;
+            font-size: 29px;
             font-weight: 300;
+            letter-spacing: 7px;
         }
 
-        .subtitle {
-            font-size: 9px;
-            letter-spacing: 4px;
+        .brand-subtitle {
             margin-top: 5px;
-            opacity: 0.8;
+
+            font-size: 8px;
+            letter-spacing: 4px;
+
+            opacity: 0.85;
         }
 
-        /* МЕНЮ */
+
+        /* ==============================
+           МЕНЮ
+        ============================== */
 
         nav {
             display: flex;
             gap: 8px;
+
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         nav a {
-            text-decoration: none;
-            color: white;
-
-            background: rgba(255, 255, 255, 0.15);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            border: 1px solid rgba(255, 255, 255, 0.35);
-
-            padding: 10px 17px;
+            padding: 11px 17px;
 
             border-radius: 12px;
 
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.13);
+
+            border: 1px solid rgba(255, 255, 255, 0.30);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
         }
 
         nav a:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.28);
+
             transform: translateY(-2px);
         }
 
-        /* ГЛАВНЫЙ ЭКРАН */
 
-        .hero {
-            min-height: 78vh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 40px 7%;
-        }
+        /* ==============================
+           ГЛАВНЫЙ ТЕКСТ
+        ============================== */
 
         .hero-content {
-            max-width: 750px;
+            width: 100%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 60px 6% 100px;
         }
 
-    .hero h1 {
-    font-size: 36px;
-    line-height: 1.05;
-    font-weight: 300;
-    letter-spacing: 1px;
 
-    color: white;
+        /* СТЕКЛЯННЫЙ ЗАГОЛОВОК */
 
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    padding: 25px 30px;
-    border-radius: 16px;
-
-    display: inline-block;
-
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
-
-    margin-bottom: 25px;
-}
-
-        .hero p {
-            font-size: 19px;
-            line-height: 1.6;
-
-            color: white;
-
-            max-width: 550px;
-
-            background: rgba(0, 0, 0, 0.35);
-
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-
-            padding: 12px 18px;
-
-            border-radius: 8px;
-
-            margin-bottom: 30px;
-        }
-
-        /* КНОПКА */
-
-        .button {
+        .hero-title {
             display: inline-block;
 
-            color: white;
-            text-decoration: none;
+            max-width: 600px;
 
-            background: rgba(255, 255, 255, 0.16);
+            padding: 25px 30px;
+
+            border-radius: 18px;
+
+            background: rgba(255, 255, 255, 0.13);
+
+            border: 1px solid rgba(255, 255, 255, 0.30);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.18);
+
+            font-size: 36px;
+            line-height: 1.15;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+
+        /* ОПИСАНИЕ */
+
+        .hero-description {
+            display: block;
+
+            width: fit-content;
+            max-width: 650px;
+
+            margin-top: 18px;
+
+            padding: 13px 19px;
+
+            border-radius: 11px;
+
+            background: rgba(0, 0, 0, 0.23);
+
+            border: 1px solid rgba(255, 255, 255, 0.22);
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
 
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            font-size: 18px;
+            line-height: 1.5;
+        }
 
-            padding: 16px 28px;
+
+        /* ==============================
+           КНОПКА
+        ============================== */
+
+        .glass-button {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 15px 25px;
 
             border-radius: 12px;
 
-            box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.14);
 
-            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.18);
+
+            font-size: 15px;
+
+            transition: 0.3s ease;
         }
 
-        .button:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.30);
 
             transform: translateY(-3px);
         }
 
-        /* ТЕЛЕФОН */
+
+        /* ==============================
+           ОБЩИЕ СЕКЦИИ
+        ============================== */
+
+        section:not(.hero) {
+            padding: 100px 7%;
+
+            background: #f1eee8;
+
+            color: #222;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+
+        /* ==============================
+           ПРОЕКТЫ
+        ============================== */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            min-height: 320px;
+
+            border-radius: 16px;
+
+            background: #d8d1c5;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 25px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .project span {
+            background: rgba(0, 0, 0, 0.55);
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 9px;
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        /* ==============================
+           ОБО МНЕ
+        ============================== */
+
+        .about-text {
+            max-width: 750px;
+
+            font-size: 20px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           КОНТАКТЫ
+        ============================== */
+
+        .contacts {
+            background: #191816 !important;
+
+            color: white !important;
+        }
+
+        .contact-text {
+            font-size: 20px;
+
+            line-height: 1.8;
+        }
+
+        .contact-link {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 13px 20px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            border-radius: 10px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #11100e;
+
+            color: rgba(255,255,255,0.6);
+
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           МОБИЛЬНАЯ ВЕРСИЯ
+        ============================== */
 
         @media (max-width: 700px) {
 
-    header {
-        padding: 20px;
-        align-items: flex-start;
-    }
+            header {
+                padding: 20px;
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 5px;
-    }
+                align-items: flex-start;
 
-    nav a {
-        font-size: 12px;
-        padding: 8px 10px;
-        margin-left: 0;
-    }
+                gap: 15px;
+            }
 
-    .hero {
-        padding: 30px 20px;
-    }
+            .logo {
+                font-size: 23px;
 
-    .hero h1 {
-        font-size: 21px;
-        padding: 20px 22px;
-    }
+                letter-spacing: 5px;
+            }
 
-    .hero p {
-        font-size: 15px;
-    }
+            .brand-subtitle {
+                font-size: 6px;
 
-    .logo {
-        font-size: 24px;
-    }
-}
+                letter-spacing: 3px;
+            }
+
+
+            /* КНОПКИ НА ТЕЛЕФОНЕ */
+
+            nav {
+                display: flex;
+
+                max-width: 235px;
+
+                gap: 5px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+
+                font-size: 11px;
+
+                border-radius: 9px;
+            }
+
+
+            /* ГЛАВНЫЙ ЭКРАН */
+
+            .hero {
+                min-height: 100svh;
+
+                background-position: center center;
+            }
+
+            .hero-content {
+                padding: 40px 20px 70px;
+            }
+
+
+            /* ЗАГОЛОВОК */
+
+            .hero-title {
+                font-size: 24px;
+
+                padding: 18px 20px;
+
+                border-radius: 14px;
+            }
+
+
+            /* ТЕКСТ */
+
+            .hero-description {
+                font-size: 15px;
+
+                padding: 10px 14px;
+            }
+
+
+            /* КНОПКА */
+
+            .glass-button {
+                font-size: 14px;
+
+                padding: 13px 20px;
+            }
+
+
+            /* СЕКЦИИ */
+
+            section:not(.hero) {
+                padding: 70px 20px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+
+            /* ПРОЕКТЫ */
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                min-height: 260px;
+            }
+
+
+            .about-text,
+            .contact-text {
+                font-size: 17px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================================
+     ГЛАВНАЯ
+========================================= -->
+
+<section class="hero" id="home">
 
     <header>
 
-        <div class="brand">
-            <div class="logo">ALVEO</div>
-            <div class="subtitle">DESIGN INTERIOR</div>
-        </div>
+        <a href="#home" class="brand">
+
+            <div class="logo">
+                ALVEO
+            </div>
+
+            <div class="brand-subtitle">
+                DESIGN INTERIOR
+            </div>
+
+        </a>
+
 
         <nav>
-            <a href="#">Главная</a>
-            <a href="#">Проекты</a>
-            <a href="#">Обо мне</a>
-            <a href="#">Контакты</a>
+
+            <a href="#home">
+                Главная
+            </a>
+
+            <a href="#projects">
+                Проекты
+            </a>
+
+            <a href="#about">
+                Обо мне
+            </a>
+
+            <a href="#contacts">
+                Контакты
+            </a>
+
         </nav>
 
     </header>
 
 
-    <section class="hero">
+    <div class="hero-content">
 
-        <div class="hero-content">
+        <h1 class="hero-title">
+            Больше, чем<br>
+            просто интерьер.
+        </h1>
 
-            <h1>
-    Больше, чем<br>
-    просто интерьер.
-</h1>
-
-    <p>
-    Создаём современные и уютные пространства,
-    в которых хочется жить.
-</p>
-
-            <a href="#" class="button">
-                Посмотреть проекты
-            </a>
-
+        <div class="hero-description">
+            Пространство, в котором хочется жить.
         </div>
 
-    </section>
+        <br>
+
+        <a href="#projects" class="glass-button">
+            Посмотреть проекты
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ПРОЕКТЫ
+========================================= -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        Проекты
+    </h2>
+
+
+    <div class="projects-grid">
+
+        <div class="project">
+            <span>
+                Проект 01
+            </span>
+        </div>
+
+        <div class="project">
+            <span>
+                Проект 02
+            </span>
+        </div>
+
+        <div class="project">
+            <span>
+                Проект 03
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ОБО МНЕ
+========================================= -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        Обо мне
+    </h2>
+
+    <p class="about-text">
+
+        Создаю современные и уютные интерьеры,
+        где эстетика сочетается с комфортом.
+        Каждое пространство продумывается
+        индивидуально — от общей концепции
+        до мельчайших деталей.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     КОНТАКТЫ
+========================================= -->
+
+<section id="contacts" class="contacts">
+
+    <h2 class="section-title">
+        Контакты
+    </h2>
+
+    <div class="contact-text">
+
+        Давайте создадим пространство,
+        в котором действительно хочется жить.
+
+        <br>
+
+        <a
+            class="contact-link"
+            href="mailto:your@email.com"
+        >
+            Написать мне
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    © 2026 ALVEO Design Interior
+
+</footer>
+
 
 </body>
 </html>
