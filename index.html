@@ -183,31 +183,41 @@
 
         @media (max-width: 700px) {
 
-            header {
-                padding: 25px;
-            }
+    header {
+        padding: 20px;
+        align-items: flex-start;
+    }
 
-            nav {
-                display: none;
-            }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 5px;
+    }
 
-            .hero {
-                padding: 30px 25px;
-            }
+    nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+        margin-left: 0;
+    }
 
-        .hero h1 {
-    font-size: 42px;
-    padding: 20px 22px;
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 21px;
+        padding: 20px 22px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
 }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .logo {
-                font-size: 26px;
-            }
-        }
     </style>
 </head>
 
