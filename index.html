@@ -6,38 +6,16 @@
 
     <title>ArtHome Design Interior</title>
 
+    <meta name="description"
+          content="ArtHome Design Interior — современные минималистичные интерьеры.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+          rel="stylesheet">
+
     <style>
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-
-    margin-top: 20px;
-    padding: 14px 22px;
-
-    color: white;
-    text-decoration: none;
-
-    background: rgba(37, 211, 102, 0.75);
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 12px;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-
-    font-size: 15px;
-
-    transition: 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background: rgba(37, 211, 102, 0.95);
-    transform: translateY(-3px);
-}
 
         /* ==============================
            ОСНОВНЫЕ НАСТРОЙКИ
@@ -54,9 +32,10 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #ffffff;
-            background: #171512;
+            font-family: "Manrope", sans-serif;
+            background: #f3f0eb;
+            color: #282621;
+            overflow-x: hidden;
         }
 
         a {
@@ -66,227 +45,219 @@
 
 
         /* ==============================
-           ГЛАВНЫЙ ЭКРАН
-        ============================== */
-
-    .hero {
-    animation: heroAppear 1.2s ease-out both;
-
-    min-height: 100vh;
-    position: relative;
-
-    /* здесь продолжаются остальные твои настройки .hero */
-}
-
-@keyframes heroAppear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-            min-height: 100vh;
-
-            position: relative;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.20),
-                    rgba(0, 0, 0, 0.20)
-                ),
-                url("background.jpg");
-
-            background-size: cover;
-            background-position: center center;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        /* ==============================
-           ШАПКА
+           HEADER
         ============================== */
 
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
             width: 100%;
 
-            padding: 28px 6%;
+            z-index: 100;
+
+            padding: 22px 6vw;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
 
-            position: relative;
-            z-index: 10;
+            color: white;
+
+            transition: 0.4s ease;
         }
 
+        header.scrolled {
+            padding-top: 15px;
+            padding-bottom: 15px;
 
-        /* ЛОГО */
+            background: rgba(35, 33, 29, 0.92);
+
+            backdrop-filter: blur(18px);
+        }
 
         .brand {
             display: flex;
             flex-direction: column;
-
-            flex-shrink: 0;
         }
 
         .logo {
-            font-size: 29px;
-            font-weight: 300;
-            letter-spacing: 7px;
+            font-size: 20px;
+            font-weight: 500;
+
+            letter-spacing: 4px;
         }
 
         .brand-subtitle {
-            margin-top: 5px;
+            margin-top: 4px;
 
             font-size: 8px;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
 
-            opacity: 0.85;
+            opacity: 0.7;
         }
-
-
-        /* ==============================
-           МЕНЮ
-        ============================== */
 
         nav {
             display: flex;
             gap: 8px;
-
-            flex-wrap: wrap;
-            justify-content: flex-end;
         }
 
         nav a {
-            padding: 11px 17px;
+            padding: 9px 14px;
 
-            border-radius: 12px;
+            font-size: 12px;
 
-            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255,255,255,0.3);
 
-            border: 1px solid rgba(255, 255, 255, 0.30);
+            background: rgba(255,255,255,0.1);
 
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(12px);
 
-            font-size: 14px;
+            border-radius: 20px;
 
             transition: 0.3s ease;
         }
 
         nav a:hover {
-            background: rgba(255, 255, 255, 0.28);
+            background: white;
+            color: #282621;
 
             transform: translateY(-2px);
         }
 
 
         /* ==============================
-           ГЛАВНЫЙ ТЕКСТ
+           HERO
         ============================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 100svh;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(20,18,15,0.62),
+                    rgba(20,18,15,0.12)
+                ),
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.45),
+                    transparent 60%
+                );
+        }
 
         .hero-content {
-            width: 100%;
-            max-width: 1200px;
+            position: relative;
 
-            margin: auto;
+            z-index: 2;
 
-            padding: 60px 6% 100px;
+            max-width: 850px;
+
+            margin-left: 8vw;
+
+            padding-top: 60px;
+
+            animation: heroAppear 1s ease forwards;
         }
 
+        .eyebrow {
+            margin-bottom: 22px;
 
-        /* СТЕКЛЯННЫЙ ЗАГОЛОВОК */
+            font-size: 10px;
 
-        .hero-title {
-            display: inline-block;
+            letter-spacing: 4px;
 
-            max-width: 600px;
+            text-transform: uppercase;
 
-            padding: 25px 30px;
-
-            border-radius: 18px;
-
-            background: rgba(255, 255, 255, 0.13);
-
-            border: 1px solid rgba(255, 255, 255, 0.30);
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            box-shadow:
-                0 15px 45px rgba(0, 0, 0, 0.18);
-
-            font-size: 36px;
-            line-height: 1.15;
-            font-weight: 300;
-            letter-spacing: 1px;
+            opacity: 0.8;
         }
 
+        h1 {
+            font-family: "Playfair Display", serif;
 
-        /* ОПИСАНИЕ */
+            font-size: clamp(48px, 7vw, 92px);
 
-        .hero-description {
-            display: block;
+            font-weight: 400;
 
-            width: fit-content;
-            max-width: 650px;
+            line-height: 1;
 
-            margin-top: 18px;
-
-            padding: 13px 19px;
-
-            border-radius: 11px;
-
-            background: rgba(0, 0, 0, 0.23);
-
-            border: 1px solid rgba(255, 255, 255, 0.22);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            font-size: 18px;
-            line-height: 1.5;
+            letter-spacing: -2px;
         }
 
+        .hero-text {
+            max-width: 480px;
 
-        /* ==============================
-           КНОПКА
-        ============================== */
-
-        .glass-button {
-            display: inline-block;
-
-            margin-top: 25px;
-
-            padding: 15px 25px;
-
-            border-radius: 12px;
-
-            background: rgba(255, 255, 255, 0.14);
-
-            border: 1px solid rgba(255, 255, 255, 0.35);
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.18);
+            margin-top: 28px;
 
             font-size: 15px;
+
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.8);
+        }
+
+        .buttons {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 32px;
+        }
+
+        .button {
+            padding: 14px 22px;
+
+            border: 1px solid rgba(255,255,255,0.65);
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
 
             transition: 0.3s ease;
         }
 
-        .glass-button:hover {
-            background: rgba(255, 255, 255, 0.30);
+        .button:hover {
+            background: white;
+
+            color: #282621;
 
             transform: translateY(-3px);
+        }
+
+        .scroll {
+            position: absolute;
+
+            z-index: 2;
+
+            right: 6vw;
+            bottom: 30px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: 0.65;
         }
 
 
@@ -294,20 +265,73 @@
            ОБЩИЕ СЕКЦИИ
         ============================== */
 
-        section:not(.hero) {
-            padding: 100px 7%;
-
-            background: #f1eee8;
-
-            color: #222;
+        section {
+            padding: 110px 7vw;
         }
 
-        .section-title {
-            margin-bottom: 45px;
+        .label {
+            margin-bottom: 18px;
 
-            font-size: 38px;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #938a7d;
+        }
+
+        .title {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(38px, 5vw, 64px);
+
+            font-weight: 400;
+
+            line-height: 1.08;
+        }
+
+        .title em {
+            font-style: normal;
+
+            color: #91887c;
+        }
+
+
+        /* ==============================
+           О СТУДИИ
+        ============================== */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 90px;
+
+            align-items: center;
+
+            background: #f3f0eb;
+        }
+
+        .about-image {
+            height: 600px;
+
+            background:
+                url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=90")
+                center / cover no-repeat;
+        }
+
+        .about-copy p {
+            max-width: 520px;
+
+            margin-top: 28px;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            color: #706a62;
         }
 
 
@@ -315,55 +339,243 @@
            ПРОЕКТЫ
         ============================== */
 
-        .projects-grid {
+        .projects {
+            background: #292722;
+
+            color: white;
+        }
+
+        .projects .label {
+            color: #a69d91;
+        }
+
+        .projects .title em {
+            color: #aaa197;
+        }
+
+        .project-grid {
             display: grid;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
-            gap: 20px;
+            gap: 18px;
+
+            margin-top: 60px;
         }
 
         .project {
-            min-height: 320px;
+            position: relative;
 
-            border-radius: 16px;
-
-            background: #d8d1c5;
-
-            display: flex;
-            align-items: flex-end;
-
-            padding: 25px;
+            height: 560px;
 
             overflow: hidden;
 
-            position: relative;
+            cursor: pointer;
         }
 
-        .project span {
-            background: rgba(0, 0, 0, 0.55);
+        .project-image {
+            position: absolute;
 
-            color: white;
+            inset: 0;
 
-            padding: 10px 15px;
+            background-size: cover;
 
-            border-radius: 9px;
+            background-position: center;
 
-            backdrop-filter: blur(10px);
+            transition:
+                transform 0.8s ease;
+        }
+
+        .project:hover .project-image {
+            transform: scale(1.035);
+        }
+
+
+        /* Минималистичный проект 1 */
+
+        .project:nth-child(1) .project-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1500&q=90");
+        }
+
+
+        /* Минималистичный проект 2 */
+
+        .project:nth-child(2) .project-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1500&q=90");
+        }
+
+
+        /* Минималистичный проект 3 */
+
+        .project:nth-child(3) .project-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1500&q=90");
+        }
+
+
+        /* Минималистичный проект 4 */
+
+        .project:nth-child(4) .project-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1500&q=90");
+        }
+
+        .project::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.5),
+                    transparent 65%
+                );
+        }
+
+        .project-info {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 25px;
+            bottom: 24px;
+        }
+
+        .project-info h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            font-weight: 400;
+        }
+
+        .project-info p {
+            margin-top: 5px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0.65;
         }
 
 
         /* ==============================
-           ОБО МНЕ
+           УСЛУГИ
         ============================== */
 
-        .about-text {
-            max-width: 750px;
+        .services {
+            background: #e9e4dc;
+        }
 
-            font-size: 20px;
+        .services-grid {
+            display: grid;
 
-            line-height: 1.7;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 60px;
+
+            border-top: 1px solid #ccc4b9;
+        }
+
+        .service {
+            padding: 35px;
+
+            border-right: 1px solid #ccc4b9;
+
+            transition: 0.3s ease;
+        }
+
+        .service:first-child {
+            border-left: 1px solid #ccc4b9;
+        }
+
+        .service:hover {
+            background: #f4f1ec;
+        }
+
+        .number {
+            font-size: 10px;
+
+            color: #948a7d;
+        }
+
+        .service h3 {
+            margin-top: 60px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 27px;
+
+            font-weight: 400;
+        }
+
+        .service p {
+            margin-top: 18px;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            color: #777067;
+        }
+
+
+        /* ==============================
+           ЦИТАТА
+        ============================== */
+
+        .quote {
+            min-height: 470px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(35,32,28,0.72),
+                    rgba(35,32,28,0.72)
+                ),
+                url("https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=2000&q=90")
+                center / cover no-repeat;
+        }
+
+        .quote-inner {
+            max-width: 850px;
+        }
+
+        .quote-text {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(35px, 5vw, 60px);
+
+            line-height: 1.15;
+        }
+
+        .quote-small {
+            margin-top: 25px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: 0.65;
         }
 
 
@@ -371,28 +583,85 @@
            КОНТАКТЫ
         ============================== */
 
-        .contacts {
-            background: #191816 !important;
+        .contact {
+            display: grid;
 
-            color: white !important;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            background: #f3f0eb;
         }
 
-        .contact-text {
-            font-size: 20px;
+        .contact-copy p {
+            max-width: 500px;
 
-            line-height: 1.8;
+            margin-top: 25px;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            color: #746d65;
         }
 
-        .contact-link {
-            display: inline-block;
+        .contact-box {
+            padding: 40px;
 
-            margin-top: 20px;
+            background: #e7e1d8;
+        }
 
-            padding: 13px 20px;
+        .contact-item {
+            padding: 18px 0;
 
-            border: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid #cbc3b8;
+        }
 
-            border-radius: 10px;
+        .contact-item:first-child {
+            padding-top: 0;
+        }
+
+        .contact-item span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #8b8174;
+        }
+
+        .contact-item a,
+        .contact-item div {
+            font-size: 15px;
+        }
+
+        .whatsapp {
+            display: inline-flex;
+
+            margin-top: 28px;
+
+            padding: 14px 22px;
+
+            background: #282621;
+
+            color: white;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-3px);
+
+            background: #454139;
         }
 
 
@@ -401,339 +670,698 @@
         ============================== */
 
         footer {
-            padding: 30px;
+            padding: 28px 7vw;
 
-            text-align: center;
+            display: flex;
 
-            background: #11100e;
+            justify-content: space-between;
 
-            color: rgba(255,255,255,0.6);
+            align-items: center;
 
-            font-size: 13px;
+            background: #24221f;
+
+            color: white;
+        }
+
+        footer .logo {
+            font-size: 15px;
+        }
+
+        footer p {
+            font-size: 9px;
+
+            color: #99938a;
         }
 
 
         /* ==============================
-           МОБИЛЬНАЯ ВЕРСИЯ
+           АНИМАЦИЯ
         ============================== */
 
-        @media (max-width: 700px) {
+        @keyframes heroAppear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* ==============================
+           ПЛАНШЕТ / ТЕЛЕФОН
+        ============================== */
+
+        @media (max-width: 800px) {
 
             header {
-                padding: 20px;
+                padding: 17px 5vw;
 
                 align-items: flex-start;
-
-                gap: 15px;
             }
 
             .logo {
-                font-size: 23px;
-
-                letter-spacing: 5px;
-            }
-
-            .brand-subtitle {
-                font-size: 6px;
+                font-size: 16px;
 
                 letter-spacing: 3px;
             }
 
-
-            /* КНОПКИ НА ТЕЛЕФОНЕ */
+            .brand-subtitle {
+                font-size: 6px;
+            }
 
             nav {
-                display: flex;
+                gap: 4px;
 
                 max-width: 235px;
 
-                gap: 5px;
+                justify-content: flex-end;
             }
 
             nav a {
-                padding: 8px 10px;
+                padding: 7px 9px;
 
-                font-size: 11px;
-
-                border-radius: 9px;
+                font-size: 9px;
             }
 
 
-            /* ГЛАВНЫЙ ЭКРАН */
-
-            .hero {
-                min-height: 100svh;
-
-                background-position: center center;
-            }
+            /* HERO */
 
             .hero-content {
-                padding: 40px 20px 70px;
+                width: 88%;
+
+                margin-left: 6vw;
+
+                padding-top: 40px;
             }
 
-
-            /* ЗАГОЛОВОК */
-
-            .hero-title {
-                font-size: 24px;
-
-                padding: 18px 20px;
-
-                border-radius: 14px;
+            h1 {
+                font-size: clamp(46px, 13vw, 68px);
             }
 
-
-            /* ТЕКСТ */
-
-            .hero-description {
-                font-size: 15px;
-
-                padding: 10px 14px;
+            .hero-text {
+                font-size: 13px;
             }
 
+            .buttons {
+                flex-direction: column;
 
-            /* КНОПКА */
+                width: 205px;
+            }
 
-            .glass-button {
-                font-size: 14px;
-
-                padding: 13px 20px;
+            .scroll {
+                display: none;
             }
 
 
             /* СЕКЦИИ */
 
-            section:not(.hero) {
-                padding: 70px 20px;
-            }
-
-            .section-title {
-                font-size: 30px;
+            section {
+                padding: 75px 6vw;
             }
 
 
-            /* ПРОЕКТЫ */
+            /* ABOUT */
 
-            .projects-grid {
+            .about {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 420px;
+
+                order: 2;
+            }
+
+
+            /* PROJECTS */
+
+            .project-grid {
                 grid-template-columns: 1fr;
             }
 
             .project {
-                min-height: 260px;
+                height: 430px;
             }
 
 
-            .about-text,
-            .contact-text {
-                font-size: 17px;
+            /* SERVICES */
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
+
+            .service,
+            .service:first-child {
+                border-left: 1px solid #ccc4b9;
+
+                border-bottom: 1px solid #ccc4b9;
+            }
+
+            .service h3 {
+                margin-top: 40px;
+            }
+
+
+            /* CONTACT */
+
+            .contact {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .contact-box {
+                padding: 28px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
         }
 
-/* ===== ПЛАВНЫЕ АНИМАЦИИ ARTDOM ===== */
 
-/* Плавное появление страницы */
-body {
-    animation: pageFade 1.2s ease forwards;
-}
+        /* ==============================
+           МАЛЕНЬКИЙ ТЕЛЕФОН
+        ============================== */
 
-@keyframes pageFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        @media (max-width: 480px) {
 
+            nav a:nth-child(2) {
+                display: none;
+            }
 
-/* Плавное появление элементов */
-header,
-.hero,
-section,
-footer {
-    animation: contentFade 1s ease both;
-}
+            h1 {
+                font-size: 48px;
+            }
 
-@keyframes contentFade {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            .project {
+                height: 390px;
+            }
 
+        }
 
-/* Логотип */
-.logo {
-    transition: transform 0.4s ease, letter-spacing 0.4s ease;
-}
-
-.logo:hover {
-    transform: translateY(-2px);
-    letter-spacing: 6px;
-}
-
-
-/* Навигация */
-nav a {
-    transition:
-        background 0.35s ease,
-        color 0.35s ease,
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-nav a:hover {
-    transform: translateY(-2px);
-}
-
-
-/* Все кнопки */
-button,
-.btn,
-a.button,
-.contact-link,
-.whatsapp-button {
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease,
-        opacity 0.35s ease;
-}
-
-button:hover,
-.btn:hover,
-a.button:hover,
-.contact-link:hover,
-.whatsapp-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* Карточки проектов */
-.project,
-.project-card,
-.card {
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
-}
-
-.project:hover,
-.project-card:hover,
-.card:hover {
-    transform: translateY(-6px);
-}
-
-
-/* Картинки проектов */
-.project img,
-.project-card img,
-.card img {
-    transition: transform 0.7s ease;
-}
-
-.project:hover img,
-.project-card:hover img,
-.card:hover img {
-    transform: scale(1.03);
-}
-
-
-/* Стеклянные элементы */
-.glass,
-.glass-button {
-    transition:
-        background 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease,
-        transform 0.4s ease;
-}
-
-
-/* WhatsApp */
-.whatsapp-button:hover {
-    transform: translateY(-3px) scale(1.02);
-}
-
-
-/* Убираем анимации для людей,
-   которые отключили движение в системе */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
     </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================================
-     ГЛАВНАЯ
-========================================= -->
+<!-- =================================
+     HEADER
+================================= -->
+
+<header id="header">
+
+    <a href="#home" class="brand">
+
+        <div class="logo">
+            ArtHome
+        </div>
+
+        <div class="brand-subtitle">
+            DESIGN INTERIOR
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="#projects">
+            Проекты
+        </a>
+
+        <a href="#about">
+            Обо мне
+        </a>
+
+        <a href="#services">
+            Услуги
+        </a>
+
+        <a href="#contacts">
+            Контакты
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =================================
+     ОСНОВНОЙ САЙТ
+================================= -->
+
+<main>
+
+
+<!-- =================================
+     HERO
+================================= -->
 
 <section class="hero" id="home">
 
-    <header>
-
-        <a href="#home" class="brand">
-
-        <div class="logo">
-    ArtHome
-</div>
-
-            <div class="brand-subtitle">
-                DESIGN INTERIOR
-            </div>
-
-        </a>
-
-
-        <nav>
-
-
-            <a href="#projects">
-                Проекты
-            </a>
-
-            <a href="#about">
-                Обо мне
-            </a>
-
-            <a href="#contacts">
-                Контакты
-            </a>
-
-        </nav>
-
-    </header>
-
-
     <div class="hero-content">
 
-        <h1 class="hero-title">
-            Больше, чем<br>
-            просто интерьер.
-        </h1>
-
-        <div class="hero-description">
-            Пространство, в котором хочется жить.
+        <div class="eyebrow">
+            Interior Design Studio
         </div>
 
-        <br>
 
-        <a href="#projects" class="glass-button">
-            Посмотреть проекты
+        <h1>
+            Больше,<br>
+            чем просто<br>
+            интерьер.
+        </h1>
+
+
+        <p class="hero-text">
+            Создаём спокойные и выразительные
+            пространства, где архитектура, свет
+            и материалы работают вместе.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="button"
+            >
+                СМОТРЕТЬ ПРОЕКТЫ
+            </a>
+
+
+            <a
+                href="https://wa.me/994705019190"
+                target="_blank"
+                class="button"
+            >
+                НАПИСАТЬ МНЕ
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll">
+        Scroll ↓
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     ОБО МНЕ
+================================= -->
+
+<section class="about" id="about">
+
+    <div class="about-image"></div>
+
+
+    <div class="about-copy">
+
+        <div class="label">
+            О студии
+        </div>
+
+
+        <h2 class="title">
+            Пространство<br>
+            <em>с характером.</em>
+        </h2>
+
+
+        <p>
+            ArtHome Design Interior —
+            создание современных интерьеров
+            с вниманием к пропорциям, свету,
+            материалам и деталям.
+        </p>
+
+
+        <p>
+            Мы стремимся к тому, чтобы интерьер
+            был не только эстетичным, но и
+            естественным продолжением образа
+            жизни его владельца.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     ПРОЕКТЫ
+================================= -->
+
+<section class="projects" id="projects">
+
+    <div class="label">
+        Избранные проекты
+    </div>
+
+
+    <h2 class="title">
+
+        Интерьеры,<br>
+
+        <em>
+            которые говорят сами за себя.
+        </em>
+
+    </h2>
+
+
+    <div class="project-grid">
+
+
+        <!-- ПРОЕКТ 1 -->
+
+        <article class="project">
+
+            <div class="project-image"></div>
+
+            <div class="project-info">
+
+                <h3>
+                    Quiet Residence
+                </h3>
+
+                <p>
+                    Минимализм
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ПРОЕКТ 2 -->
+
+        <article class="project">
+
+            <div class="project-image"></div>
+
+            <div class="project-info">
+
+                <h3>
+                    Warm Apartment
+                </h3>
+
+                <p>
+                    Тёплый минимализм
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ПРОЕКТ 3 -->
+
+        <article class="project">
+
+            <div class="project-image"></div>
+
+            <div class="project-info">
+
+                <h3>
+                    Modern House
+                </h3>
+
+                <p>
+                    Contemporary
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ПРОЕКТ 4 -->
+
+        <article class="project">
+
+            <div class="project-image"></div>
+
+            <div class="project-info">
+
+                <h3>
+                    Pure Space
+                </h3>
+
+                <p>
+                    Современный интерьер
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     УСЛУГИ
+================================= -->
+
+<section class="services" id="services">
+
+    <div class="label">
+        Что мы делаем
+    </div>
+
+
+    <h2 class="title">
+
+        От идеи<br>
+
+        <em>
+            до готового пространства.
+        </em>
+
+    </h2>
+
+
+    <div class="services-grid">
+
+
+        <div class="service">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Дизайн интерьера
+            </h3>
+
+            <p>
+                Концепция, планировка,
+                материалы, цветовая палитра
+                и полное визуальное решение.
+            </p>
+
+        </div>
+
+
+
+        <div class="service">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                3D-визуализация
+            </h3>
+
+            <p>
+                Фотореалистичные изображения,
+                позволяющие увидеть будущий
+                интерьер ещё до ремонта.
+            </p>
+
+        </div>
+
+
+
+        <div class="service">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Авторский надзор
+            </h3>
+
+            <p>
+                Контроль реализации проекта
+                и соответствия готового
+                пространства первоначальной концепции.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     ЦИТАТА
+================================= -->
+
+<section class="quote">
+
+    <div class="quote-inner">
+
+        <div class="quote-text">
+
+            «Хороший интерьер —
+            это пространство,
+            в котором хочется остаться.»
+
+        </div>
+
+
+        <div class="quote-small">
+
+            ArtHome Design Interior
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     КОНТАКТЫ
+================================= -->
+
+<section class="contact" id="contacts">
+
+
+    <div class="contact-copy">
+
+        <div class="label">
+            Контакты
+        </div>
+
+
+        <h2 class="title">
+
+            Давайте создадим<br>
+
+            <em>
+                что-то особенное.
+            </em>
+
+        </h2>
+
+
+        <p>
+            Расскажите о вашем пространстве
+            и идее — обсудим будущий интерьер
+            и возможный формат работы.
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-box">
+
+
+        <div class="contact-item">
+
+            <span>
+                WhatsApp
+            </span>
+
+            <a
+                href="https://wa.me/994705019190"
+                target="_blank"
+            >
+                +994 70 501 91 90
+            </a>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+            <span>
+                Студия
+            </span>
+
+            <div>
+                ArtHome Design Interior
+            </div>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+            <span>
+                Работа
+            </span>
+
+            <div>
+                По предварительной записи
+            </div>
+
+        </div>
+
+
+
+        <a
+            href="https://wa.me/994705019190"
+            target="_blank"
+            class="whatsapp"
+        >
+            НАПИСАТЬ В WHATSAPP →
         </a>
 
     </div>
@@ -741,108 +1369,55 @@ a.button:hover,
 </section>
 
 
-
-<!-- =========================================
-     ПРОЕКТЫ
-========================================= -->
-
-<section id="projects">
-
-    <h2 class="section-title">
-        Проекты
-    </h2>
-
-
-    <div class="projects-grid">
-
-        <div class="project">
-            <span>
-                Проект 01
-            </span>
-        </div>
-
-        <div class="project">
-            <span>
-                Проект 02
-            </span>
-        </div>
-
-        <div class="project">
-            <span>
-                Проект 03
-            </span>
-        </div>
-
-    </div>
-
-</section>
+</main>
 
 
 
-<!-- =========================================
-     ОБО МНЕ
-========================================= -->
-
-<section id="about">
-
-    <h2 class="section-title">
-        Обо мне
-    </h2>
-
-    <p class="about-text">
-
-        Создаю современные и уютные интерьеры,
-        где эстетика сочетается с комфортом.
-        Каждое пространство продумывается
-        индивидуально — от общей концепции
-        до мельчайших деталей.
-
-    </p>
-
-</section>
-
-
-
-<!-- =========================================
-     КОНТАКТЫ
-========================================= -->
-
-<section id="contacts" class="contacts">
-
-    <h2 class="section-title">
-        Контакты
-    </h2>
-
-    <div class="contact-text">
-
-        связь со мной
-
-        <br>
-
-    <a
-    class="whatsapp-button"
-    href="https://wa.me/994705019190"
-    target="_blank"
->
-    <span>●</span> Написать мне в WhatsApp
-</a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
+<!-- =================================
      FOOTER
-========================================= -->
+================================= -->
 
 <footer>
 
-    © 2026 ArtHome Design Interior.
-Все права защищены.
+    <div class="logo">
+        ArtHome
+    </div>
+
+
+    <p>
+        © 2026 ArtHome Design Interior
+    </p>
+
 </footer>
 
 
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
+<script>
+
+    const header =
+        document.getElementById("header");
+
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+</script>
+
+
 </body>
-</html>
+</html>ы
